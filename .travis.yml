@@ -1,0 +1,28 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start creating an image with dockerfile"
+  - docker build -t ks00141/docker-react-app -f dockerfile.dev .
+
+script:
+  - docker run -e CU=ture ks00141/docker-react-app npm run test test -- --coverage
+
+atfer_succress:
+  - echo "Test success!!"
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-react-app"
+  env: "docker-react-app-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-173021810088"
+  bucket_path: "docker-react-app"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
