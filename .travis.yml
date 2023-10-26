@@ -10,7 +10,7 @@ before_install:
   - docker build -t ks00141/docker-react-app -f dockerfile.dev .
 
 script:
-  - docker run -e CU=ture ks00141/docker-react-app npm run test test -- --coverage
+  - docker run -e CI=ture ks00141/docker-react-app npm run test test -- --coverage
 
 atfer_success:
   - echo "Test success!!"
