@@ -12,7 +12,7 @@ before_install:
 script:
   - docker run -e CU=ture ks00141/docker-react-app npm run test test -- --coverage
 
-atfer_succress:
+atfer_success:
   - echo "Test success!!"
 
 deploy:
