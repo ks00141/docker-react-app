@@ -16,7 +16,6 @@ atfer_success:
   - echo "Test success!!"
 
 deploy:
-  edge: true
   provider: elasticbeanstalk
   region: "ap-northeast-2"
   app: "docker-react"
