@@ -18,8 +18,8 @@ atfer_success:
 deploy:
   provider: elasticbeanstalk
   region: "ap-northeast-2"
-  app: "docker-react"
-  env: "docker-react-env"
+  app: "docker-app"
+  env: "docker-app-env"
   bucket_name: "elasticbeanstalk-ap-northeast-2-173021810088"
   bucket_path: "docker-react-app"
   on:
