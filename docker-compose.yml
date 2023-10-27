@@ -4,11 +4,11 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-    # ports:
-    #   - "3000:3000"
-    # volumes:
-    #   - /usr/src/app/node_modules
-    #   - ./:/usr/src/app
+    ports:
+      - "80:80"
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
     # stdin_open: true
   tests:
     build:
