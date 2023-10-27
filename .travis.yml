@@ -13,7 +13,7 @@ script:
   - docker run -e CI=ture ks00141/docker-react-app npm run test test -- --coverage
 
 atfer_success:
-  - echo "Test success!!"
+  - echo "Test success!!!"
 
 deploy:
   provider: elasticbeanstalk
