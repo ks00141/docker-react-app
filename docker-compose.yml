@@ -3,13 +3,13 @@ services:
   react:
     build:
       context: .
-      dockerfile: dockerfile
+      dockerfile: dockerfile.dev
     ports:
-      - "80:80"
+      - "80:3000"
     volumes:
       - /usr/src/app/node_modules
       - ./:/usr/src/app
-    # stdin_open: true
+    stdin_open: true
   tests:
     build:
       context: .
